@@ -1,6 +1,16 @@
 # NUCLeId Npm Universal Command Line Interface
 A simple yet powerful package to use command line to use your package
 
+Ever wanted to execute your favorite npm package in CLI wihtout having to deal with whatever super package cor custom use?
+
+Ever wanted to embed a npm package into your favorite language using only CLI Shell?
+
+Enter nucleid, the fast and easy way to call npm package within CLI:
+- support input/output data in JSON
+- you can pipe it
+- dynamic package install (still to improve)
+
+
 # Quickstart
 ## installation
 `npm install -g nucleid`
@@ -28,4 +38,14 @@ A simple yet powerful package to use command line to use your package
 ```
 > nucleid -r arkjs -e transaction.createTransaction "AN7BURQn5oqBRBADeWhmmUMJGQTy5Seey3" 1000000000 "" 🦄 --ojson
 {"type":0,"amount":"1000000000","fee":10000000,"recipientId":"AN7BURQn5oqBRBADeWhmmUMJGQTy5Seey3","timestamp":12272383,"asset":{},"vendorField":"🦄","senderPublicKey":"037699680696ba0f746ee581d775b0ef13a8832fe2539be80eaabff154f3e3995d","signature":"3045022100a801b198bc8719bb953d32d6afbd19bb7df4dde4ec20fee1cb5ec4dd6fe41f4902201a27a7eef2220ca9474c70f57d56dbff81ef64c3e753e5daaad499da68d0b4f8","id":"64f8d7466ae6e7f11401affdbe4dfbd94414670c2ffbb83e8c43e11ac975557e"}
+```
+
+## embed in your own language
+PHP does not have embed crypto lib simple to use in ark?
+
+```php
+<?php
+$output = shell_exec('nucleid -r arkjs -e transaction.createTransaction "AN7BURQn5oqBRBADeWhmmUMJGQTy5Seey3" 1000000000 "" 🦄 --ojson');
+echo "<h1>My signed transaction</h1><pre>$output</pre>";
+?>
 ```
