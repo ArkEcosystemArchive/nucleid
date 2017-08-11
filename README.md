@@ -30,6 +30,8 @@ Enter nucleid, the fast and easy way to call npm package within CLI:
     -r, --require <package>   The package to require
     -e, --execute <function>  The function to execute
     -i, --install <package>   The package to install locally beforehand
+    -u, --use <url>           the url of the snippet to use
+    -p, --path <path>         the file to run
     --ijson                   Input argument is well formatted json that should be parsed as object
     --ojson                   Output result is object that should be well formatted json
     -h, --help                output usage information
@@ -48,4 +50,15 @@ PHP does not have embed crypto lib simple to use in ark?
 $output = shell_exec('nucleid -r arkjs -e transaction.createTransaction "AN7BURQn5oqBRBADeWhmmUMJGQTy5Seey3" 1000000000 "" 🦄 --ojson');
 echo "<h1>My signed transaction</h1><pre>$output</pre>";
 ?>
+```
+
+## wait! It is slightly more complex, i have put up a quick snippet to use the lib...
+We got you covered:
+
+```
+> nucleid  "AN7BURQn5oqBRBADeWhmmUMJGQTy5Seey3" 1000000000 🦄  🦄  --use https://gist.githubusercontent.com/fix/4515e7cb37a2faec13878e2ce34d094d/raw/testsignature.js
+```
+or 
+```
+> nucleid  "AN7BURQn5oqBRBADeWhmmUMJGQTy5Seey3" 1000000000 🦄  🦄  --path ./test.js
 ```
