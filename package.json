@@ -1,0 +1,25 @@
+{
+  "name": "nucleid",
+  "version": "1.0.0",
+  "description": "Universal npm package cli-wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "npm",
+    "wrapper"
+  ],
+  "bin": {
+    "nucleid": "index.js"
+  },
+  "author": "fx thoorens",
+  "license": "ISC",
+  "dependencies": {
+    "arkjs": "github:arkecosystem/ark-js#master",
+    "commander": "^2.11.0",
+    "get-stdin": "^5.0.1",
+    "npm": "^5.3.0"
+  }
+}
